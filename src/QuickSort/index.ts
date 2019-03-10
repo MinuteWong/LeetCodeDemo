@@ -7,5 +7,7 @@ const quickSort = (list: number[]): number[] => {
     const item = list[i];
     item >= basePoint ? rightList.push(item) : leftList.push(item);
   }
-  return quickSort(leftList).concat(quickSort(rightList));
+  return quickSort(leftList).concat(basePoint, quickSort(rightList));
 };
+
+export default quickSort;
