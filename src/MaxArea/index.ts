@@ -10,4 +10,18 @@ const maxArea = function(height: number[]) {
   return maxArea;
 };
 
-export default maxArea;
+const towPointMaxArea = function(height: number[]) {
+  if (height.length <= 1) return -1;
+  let i = 0;
+  let j = height.length - 1;
+  let area = 0;
+  while (j > i) {
+    const areaHeight = Math.min(height[j], height[i]);
+    area = Math.max(area, areaHeight * (j - i));
+    if (height[j] > height[i]) i++;
+    else j--;
+  }
+  return area;
+};
+
+export { maxArea, towPointMaxArea };
