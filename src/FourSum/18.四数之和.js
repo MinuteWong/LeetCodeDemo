@@ -43,7 +43,7 @@ var fourSum = function(nums, target) {
   for (let i = 0; i < sortNums.length - 3; i++) {
     if (i !== 0 && sortNums[i - 1] === sortNums[i]) continue;
     for (let j = i + 1; j < sortNums.length - 2; j++) {
-      if (j !== 1 && sortNums[j - 1] === sortNums[j]) continue;
+      if (j !== i + 1 && sortNums[j - 1] === sortNums[j]) continue;
       let right = sortNums.length - 1;
       let left = j + 1;
       while (right > left) {

@@ -2,11 +2,10 @@ const fourSum = (nums: number[], target: number): number[][] | number => {
   if (nums.length < 4) return -1;
   const sortNums = nums.sort((a, b) => a - b);
   const res = [];
-  for (let i = 0; i < sortNums.length - 4; i++) {
+  for (let i = 0; i < sortNums.length - 3; i++) {
     if (i !== 0 && sortNums[i - 1] === sortNums[i]) continue;
-    console.log(1);
-    for (let j = i + 1; j < sortNums.length - 3; j++) {
-      if (j !== 1 && sortNums[j - 1] === sortNums[j]) continue;
+    for (let j = i + 1; j < sortNums.length - 2; j++) {
+      if (j !== i + 1 && sortNums[j - 1] === sortNums[j]) continue;
       let right = sortNums.length - 1;
       let left = j + 1;
       while (right > left) {
@@ -29,6 +28,6 @@ const fourSum = (nums: number[], target: number): number[][] | number => {
   return res;
 };
 
-console.log(fourSum([0, 0, 0, 0], 0));
+console.log(fourSum([-1, 0, 1, 2, -1, -4], -1));
 
 export default fourSum;
