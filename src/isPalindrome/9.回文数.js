@@ -46,7 +46,7 @@ var isPalindrome = function(x) {
   if (x < 0) return false;
   const char = x.toString();
   let newChar = '';
-  for (let i = char.length - 1; i > 0; i--) {
+  for (let i = char.length - 1; i > -1; i--) {
     newChar += char.charAt(i);
   }
   return newChar === char;
