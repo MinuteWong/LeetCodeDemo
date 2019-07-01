@@ -14,10 +14,8 @@ var nextPermutation = function(nums) {
         if (nums[j] > nums[i - 1]) continue;
         else break;
       }
-      var cache = nums[i - 1];
-      nums[i - 1] = nums[j - 1];
-      nums[j - 1] = cache;
-      return quickSort(nums, i + 1, nums.length - 1);
+      exch(nums, i - 1, j - 1);
+      return quickSort(nums, i, nums.length - 1);
     }
   }
   return quickSort(nums, 0, nums.length - 1);
