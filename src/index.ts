@@ -1,25 +1,15 @@
-import { Readable } from "stream";
+import http from "http";
 
-class Counter extends Readable {
-  _max: any;
-  _index: any;
-  constructor(opt?: any) {
-    super(opt);
-    this._max = 1000000;
-    this._index = 1;
-  }
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.write("dd");
+  res.end();
+}).listen(8080);
 
-  _read() {
-    const i = this._index++;
-    if (i > this._max) this.push(null);
-    else {
-      const str = String(i);
-      const buf = Buffer.from(str, "ascii");
-      this.push(buf);
-    }
-  }
-}
+// server.on("connection", (socket) => {
+//   socket.setTimeout(200);
+// });
 
-const couter = new Counter();
-
-couter.on("data", data => console.log(data));
+server.on("clientError", (err, socket) => {
+  socket.end("HTTP/1.1 400 Bad Request\r\n\r\n");
+});
