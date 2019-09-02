@@ -49,7 +49,7 @@ Heap.prototype.swim = function(k) {
 };
 
 Heap.prototype.sink = function(k) {
-  while (2 * k <= this.heap.length) {
+  while (2 * k < this.heap.length) {
     var child = 2 * k;
     if (child < this.heap.length && this.heap[child] > this.heap[child + 1])
       child++;
@@ -64,3 +64,4 @@ var exch = function(arr, i, j) {
   arr[i] = arr[j];
   arr[j] = cache;
 };
+
