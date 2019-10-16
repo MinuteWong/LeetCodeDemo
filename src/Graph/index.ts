@@ -27,6 +27,3 @@ export default class Graph {
   }
 }
 
-const graph = new Graph(5);
-graph.randomGraph(10);
-console.log(graph);
