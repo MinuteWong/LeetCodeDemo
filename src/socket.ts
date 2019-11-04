@@ -14,7 +14,7 @@ http
     req.on("end", () => {
       console.log(33);
       res.write(data);
-      res;
+      res.end();
     });
   })
   .listen(8080);

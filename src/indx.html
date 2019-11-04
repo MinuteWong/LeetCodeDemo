@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +7,27 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
-    console.log(Vue.options)
-
-  var Profile = Vue.extend({
-    template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
-    data: function () {
-      return {
-        firstName: 'Walter',
-        lastName: 'White',
-        alias: 'Heisenberg'
-      }
-    }
-  )}
-    new Vue({
-
-      render(h) {
-        console.log(this)
-        return h(Profile)
-      },
-    }).$mount('#app');
-    console.log(Vue.options )
-  </script>
+  <div id="app">
+    <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
+    11121'""
+    \u0041;
+  </div>
 </body>
+<script>
+console.log(document.querySelector('img'))
+window.onload = function() {
+  console.log('wind')
+}
+document.addEventListener('DOMContentLoaded', function() {
+  console.log(445600)
+})
+
+document.onreadystatechange = function(e,b) {
+  console.log(document.readyState)
+}
+document.querySelector('img').onload = function() {
+  console.log(4434)
+  console.log(this)
+}
+</script>
 </html>
