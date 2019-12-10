@@ -1,5 +1,5 @@
 import http, { Agent } from "http";
-
+import { observable } from 'mobx';
 const agent = new Agent({
   keepAlive: true,
   // timeout: 20000
